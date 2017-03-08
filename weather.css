@@ -1,0 +1,60 @@
+* {
+  font-family: "Josefin Sans";
+}
+
+html {
+  /*background: url("https://dncache-mauganscorp.netdna-ssl.com/thumbseg/1035/1035103-bigthumbnail.jpg") no-repeat center fixed;*/
+  background-color: #212121;
+  background-size: cover;
+}
+
+body {
+  color: black;
+  background-color: transparent;
+  position: relative;
+}
+
+#wrapper {
+  font-size: 60px;
+  width: 80%;
+  color: #eee;
+  margin: 200px auto;
+  text-align: center;
+}
+.weatherImage{
+  font-size: 120px
+}
+.weather{
+  margin-top: 40px;
+  line-height: 80px
+}
+
+#wrapper .weather .description,
+#wrapper .weather .temperature {
+  /*font-size: 55px;*/
+  color: white;
+}
+
+.celsius,
+.fahrenheit {
+  background-color: transparent;
+  border: none;
+  color: #00e7f5;
+  font-size: 50px;
+  font-family: Arial, Helvetica, sans-serif
+}
+
+.fahrenheit {
+  display: none
+}
+
+button:active {
+  text-decoration: none
+}
+
+button:hover {
+  cursor: pointer
+}
+
+
+/*# sourceMappingURL=weather.css.map */
