@@ -1,18 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta http-equiv="X-UA-Compatible" content="ie=edge">
    <link rel="stylesheet" href="../css/fa.css">
-   <link rel="stylesheet" href="../css/bootstrap.css">   
+   <link rel="stylesheet" href="../css/bootstrap.css">
    <link rel="stylesheet" href="../css/css.css">
    <title>Pomodoro Clock</title>
 </head>
+
 <body>
-   <h1>Boiler Plate for Front Ends</h1>
+   <h1 class="text-center">Pomodoro Clock</h1>
+   <section class="time-selector">
+      <div class="left">
+         <button class="btn btn-danger break-decrement">-</button>
+         <span class="break">break</span>
+         <button class="btn btn-primary break-increment">+</button>
+      </div>
+      <div class="right">
+         <button class="btn btn-danger timer-decrement">-</button>
+         <span class="timer">timer<span>
+      <button class="btn btn-primary timer-increment">+</button>
+   </div>
+</section>
+
+   <div class="clock">
+      <p class="time">20</p>
+   </div>
+
+   <!--SCRIPTS-->
    <script src="../js/jquery.js"></script>
    <script src="../js/bootstrap.js"></script>
    <script src="../js/js.js"></script>
 </body>
+
 </html>
