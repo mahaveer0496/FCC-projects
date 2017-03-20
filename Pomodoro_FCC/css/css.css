@@ -21,7 +21,10 @@
 .right {
    text-align: right;
 }
-
+.display-time{
+   display: inline-block;
+   width: 50px;
+}
 .clock {
    margin: 150px auto;
    width: 380px;
