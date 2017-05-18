@@ -28,7 +28,19 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
         crossorigin="anonymous"></script>
-    <script src="weather.js"></script>
+    <!--<script src="weather.js"></script>-->
+    <script>
+        fetch("https://api.ipify.org?format=json").then(function (responseFirstAPI) {
+            responseFirstAPI.json().then(function (dataFirstAPI) {
+                console.log(dataFirstAPI)
+                fetch(`http://ip-api.com/json/${dataFirstAPI.ip}`).then(function (responseSecondAPI) {
+                    responseSecondAPI.json().then(function (dataSecondAPI) {
+                        console.log(dataSecondAPI);
+                    })
+                })
+            })
+        })
+    </script>
 </body>
 
 </html>

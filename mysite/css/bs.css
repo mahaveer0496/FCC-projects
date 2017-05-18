@@ -1,0 +1,80 @@
+.header{
+	padding: 20px 0;
+	box-shadow: 0 0 15px 2.6px rgba(0, 0, 0, 0.74);
+	background-color: rgba(1,1,1,.4);
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+    font-size:20px;
+    transition:all .4s
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+    color: wheat;
+    text-shadow:0 0 2px white
+}
+
+.navbar-inverse .navbar-brand {
+	color: white;
+	font-size:50px;
+	transition:all .4s
+}
+
+.navbar-inverse .navbar-brand:hover{
+	color:wheat;
+	text-shadow:0 0 2px white
+}
+
+.img-container{
+	position:absolute;
+
+	width:100%;
+
+	overlay:hidden;
+}
+.img{
+	display:inline-block;
+	width:100%;
+	z-index:-999999;
+}
+
+.img-caption{
+	text-align:center;
+	position:absolute;
+	color:white;
+	top:400px;
+	margin:0;
+	width:98%;
+
+	/* z-index:5; */
+	/* display:inline-block; */
+}
+
+.img-caption p {
+	font-size:250%;
+	letter-spacing:10px;
+	word-spacing:10px
+}
+
+.online{
+	color: #339beb;
+	text-shadow:0 0 1px white;
+
+
+}
+
+.img-description{
+	font-size:50%;
+	letter-spacing:5px;
+	word-spacing:2px
+}
+
+.online , .img-description{
+	transition:all 2s;
+}
+span[class="online"]:hover , span[class="img-description"]:hover{
+	background-color:rgba(1,1,1,.3);
+	text-shadow:0 0 10px white;
+
+}

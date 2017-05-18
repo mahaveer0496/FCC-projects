@@ -4,8 +4,8 @@
 }
 
 .time-selector {
-   margin-top: 50px;
-   margin-bottom: -50px
+   margin-top: 10px;
+   margin-bottom: -150px
 }
 
 .left,
@@ -27,6 +27,7 @@
 }
 .clock {
    margin: 150px auto;
+   margin-bottom: 0px;
    width: 380px;
    height: 380px;
    line-height: 380px;
