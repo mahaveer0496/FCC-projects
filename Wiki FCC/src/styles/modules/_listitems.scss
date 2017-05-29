@@ -1,0 +1,32 @@
+.list {
+  width: 80%;
+  margin: 0 auto;
+  min-height: 100px;
+  background-color: #f4f4f4;
+  padding: 20px 30px;
+  position: relative;
+  &__text {
+    position: relative;
+    padding-left: 15px;
+    text-align: justify;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-left: -15px;
+      display: block;
+      background-color: red;
+      width: 15px;
+      height: 100%;
+    }
+    &::after {
+      content: '';
+      display: block;
+    }
+  }
+  &__link {
+    position: absolute;
+    right: 30px;
+  }
+}
