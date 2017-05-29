@@ -7,11 +7,20 @@
         "babel"
     ],
     "rules": {
-        "react/prefer-stateless-function": [0, { "ignorePureComponents": 0 }],
+        "react/prefer-stateless-function": [0, {
+            "ignorePureComponents": 0
+        }],
         "react/prop-types": 0,
         "linebreak-style": 0,
         "no-console": 0,
-        "no-underscore-dangle": 0
+        "no-underscore-dangle": 0,
+        "comma-dangle": ["error", {
+            "arrays": "always",
+            "objects": "always",
+            "imports": "always",
+            "exports": "always",
+            "functions": "ignore"
+        }]
     },
     "env": {
         "browser": true
