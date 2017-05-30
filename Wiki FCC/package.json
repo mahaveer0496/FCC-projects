@@ -11,7 +11,8 @@
   "dependencies": {
     "fetch-jsonp": "^1.0.7",
     "react": "^15.5.4",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "shortid": "^2.2.8"
   },
   "devDependencies": {
     "babel-core": "^6.24.1",

@@ -32,23 +32,27 @@
       }
     }
   }
-  &__button {
-    height: 39px;
-    width: 50px;
-    line-height: 39px;
-    font-size: 18px;
-    text-decoration: none;
-    text-transform: uppercase;
-    cursor: pointer;
-    color: #FFFFFF;
-    box-shadow: inset 0px 1px 0px 0px #45D6D6;
+}
+
+.button {
+  display: inline-block;
+  text-align: center;
+  height: 39px;
+  width: 50px;
+  line-height: 39px;
+  font-size: 18px;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(1, 1, 1, .3);
+  transition: box-shadow .3s ease-in-out;
+  &-pink {
     background-color: #E81D62;
-    border: none;
-    border-radius: 2px;
-    box-shadow: 0 2px 4px rgba(1, 1, 1, .3);
-    transition: box-shadow .3s ease-in-out;
-    &:hover {
-      box-shadow: 0 4px 6px rgba(1, 1, 1, .3)
-    }
+  }
+  &:hover {
+    box-shadow: 0 4px 6px rgba(1, 1, 1, .3)
   }
 }

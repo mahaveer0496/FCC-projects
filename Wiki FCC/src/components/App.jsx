@@ -1,36 +1,52 @@
-import React, { Component, } from 'react';
+import React, { Component } from 'react';
 import fetchJsonp from 'fetch-jsonp';
 
 // components---
 import Form from './Form';
 import ListItems from './ListItems';
+import Spinner from './Spinner';
 
 class App extends Component {
   constructor(props) {
     super(props);
-    // this.search = this.search.bind(this);
+    this.searchHandler = this.searchHandler.bind(this);
     this.state = {
       data: '',
+      showSpinner: true,
     };
-  }
-  componentWillMount() {
-    const searchString = 'random';
-    fetchJsonp(`https://en.wikipedia.org/w/api.php?action=opensearch&limit=24&format=json&search=${searchString}&callback=?`)
+    // initial fetch---
+    fetchJsonp('https://en.wikipedia.org/w/api.php?action=opensearch&limit=24&format=json&search=apples&callback=?')
       .then((res) => {
-        res.json()
-          .then((json) => {
-            console.log(json);
+        res.json().then((data) => {
+          this.setState({
+            data,
+            showSpinner: false,
           });
+        });
       });
   }
-  // search(callback) {
-  //   console.log(callback);
-  // }
+
+  searchHandler(searchText) {
+    this.setState({
+      showSpinner: true,
+    });
+    fetchJsonp(`https://en.wikipedia.org/w/api.php?action=opensearch&limit=24&format=json&search=${searchText}&callback=?`)
+      .then((res) => {
+        res.json().then((data) => {
+          this.setState({
+            data,
+            showSpinner: false,
+          });
+        });
+      });
+  }
   render() {
+    const { data, showSpinner } = this.state;
     return (
       <div>
-        <Form />
-        <ListItems />
+        <Form searchHandler={this.searchHandler} />
+        {!showSpinner && <ListItems data={data} />}
+        {showSpinner && <Spinner />}
       </div>
     );
   }

@@ -1,11 +1,18 @@
 import React from 'react';
+import shortid from 'shortid';
+import ListItem from './ListItem';
 
-const ListItems = props => (
-  <div className="list">
-    <p className="list__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt et aut explicabo, nam, magni in a ipsum eaque asperiores assumenda impedit maxime perspiciatis hic voluptatibus quasi aspernatur unde. Quibusdam, ad!
-    </p>
-    <a href="/" className="list__link">Read more...</a>
-  </div>
+const ListItems = ({ data }) => (
+  <ul className="list_item_container">
+    {data[1].map((val, index) =>
+      (<ListItem
+        key={shortid.generate()}
+        title={data[1][index]}
+        description={data[2][index]}
+        url={data[3][index]}
+      />)
+    )}
+  </ul>
 );
 
 export default ListItems;
