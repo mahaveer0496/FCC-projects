@@ -36,6 +36,8 @@ class App extends Component {
           this.setState({
             data,
             showSpinner: false,
+          },()=>{
+            console.log(this.state.data);
           });
         });
       });

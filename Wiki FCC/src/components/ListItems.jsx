@@ -4,7 +4,9 @@ import ListItem from './ListItem';
 
 const ListItems = ({ data }) => (
   <ul className="list_item_container">
-    {data[1].map((val, index) =>
+    {data[1].length === 0
+    ? <h1 className="list__error">Oops! No Results, <br /> Try something else.</h1>
+    : data[1].map((val, index) =>
       (<ListItem
         key={shortid.generate()}
         title={data[1][index]}
