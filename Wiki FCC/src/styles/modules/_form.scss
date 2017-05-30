@@ -1,34 +1,53 @@
 .form {
   width: 80%;
   margin: 20px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
   &__hidden {
     display: none;
   }
   &__search-field {
-    color: black;
+    color: $dark_grey_text;
     input[type="text"] {
       width: 400px;
       height: 39px;
       line-height: 39px;
       padding: 5px 10px;
       border-radius: 2px;
-      box-shadow: 0 2px 4px rgba(1, 1, 1, .3);
+      box-shadow: 0 2px 4px $light_grey;
+      -webkit-transition: box-shadow .3s ease-in-out;
       transition: box-shadow .3s ease-in-out;
       font-size: 16px;
       outline: none;
       border: none;
+      &::-webkit-input-placeholder {
+        color: $dark_grey;
+        font-size: 16px;
+      }
+      &::-moz-placeholder {
+        color: $dark_grey;
+        font-size: 16px;
+      }
+      &:-ms-input-placeholder {
+        color: $dark_grey;
+        font-size: 16px;
+      }
       &::placeholder {
-        color: rgba(1, 1, 1, .5);
+        color: $dark_grey;
         font-size: 16px;
       }
       &:hover {
-        box-shadow: 0 4px 6px rgba(1, 1, 1, .3)
+        box-shadow: 0 4px 6px $light_grey;
       }
       &:focus {
-        box-shadow: 0 4px 6px rgba(1, 1, 1, .3)
+        box-shadow: 0 4px 6px $light_grey;
       }
     }
   }
@@ -44,15 +63,16 @@
   text-decoration: none;
   text-transform: uppercase;
   cursor: pointer;
-  color: #FFFFFF;
+  color: white;
   border: none;
   border-radius: 2px;
-  box-shadow: 0 2px 4px rgba(1, 1, 1, .3);
+  box-shadow: 0 2px 4px $light_grey;
+  -webkit-transition: box-shadow .3s ease-in-out;
   transition: box-shadow .3s ease-in-out;
   &-pink {
-    background-color: #E81D62;
+    background-color: $pink;
   }
   &:hover {
-    box-shadow: 0 4px 6px rgba(1, 1, 1, .3)
+    box-shadow: 0 4px 6px $light_grey
   }
 }

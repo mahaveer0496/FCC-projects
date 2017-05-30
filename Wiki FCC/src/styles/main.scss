@@ -1,4 +1,4 @@
-@import 'modules/app';
+@import 'modules/colors';
 @import 'modules/form';
 @import 'modules/list-item';
 @import 'modules/spinner';
@@ -9,5 +9,5 @@
 }
 
 body {
-  overflow-x: hidden;
+  overflow: scroll;
 }

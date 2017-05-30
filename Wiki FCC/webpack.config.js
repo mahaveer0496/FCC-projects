@@ -4,31 +4,30 @@ const APP_DIR = path.resolve(__dirname, 'src');
 const DIST_DIR = path.resolve(__dirname, 'dist');
 
 const config = {
-  entry: APP_DIR + '/index.jsx',
+  entry: `${APP_DIR}/index.jsx`,
   output: {
     path: DIST_DIR,
     filename: 'bundle.js',
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js', '.jsx'],
   },
   module: {
-    loaders: [
-      {
-        test: /\.jsx?/,
-        include: APP_DIR,
-        loader: 'babel-loader'
-      },
-      {
-        test: /\.scss$/,
-        loaders: ['style-loader?sourceMap', 'css-loader', 'sass-loader']
-      }
-    ]
-  },  
+    loaders: [{
+      test: /\.jsx?/,
+      include: APP_DIR,
+      loader: 'babel-loader',
+    },
+    {
+      test: /\.scss$/,
+      loaders: ['style-loader', 'css-loader', 'sass-loader'],
+    },
+    ],
+  },
   devtool: 'source-map',
   devServer: {
-    historyApiFallback: true
-  }
-}
+    historyApiFallback: true,
+  },
+};
 
 module.exports = config;
