@@ -1,4 +1,2 @@
-const GET_DATA = 'GET_DATA';
-module.exports = {
-  GET_DATA,
-};
+export const FETCHING = 'FETCHING';
+export const COMPLETE_FETCH = 'COMPLETE_FETCH';

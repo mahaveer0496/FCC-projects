@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 
 const ListItem = ({ title, description, url }) => (
   <li className="list">
@@ -7,5 +9,9 @@ const ListItem = ({ title, description, url }) => (
     <a className="list__link" target="_blank" rel="noopener noreferrer" href={url} >Read more</a>
   </li>
 );
-
+ListItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+};
 export default ListItem;

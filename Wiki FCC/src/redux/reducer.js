@@ -1,44 +1,26 @@
-import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import fetchJsonp from 'fetch-jsonp';
+import { createStore, applyMiddleware, compose } from 'redux';
+import { FETCHING, COMPLETE_FETCH } from './actionTypes';
 
-const FETCHING = 'FETCHING';
-const COMPLETE_FETCH = 'COMPLETE_FETCH';
-
-export const fetching = () => ({
-  type: FETCHING,
-});
-
-export const completeFetch = data => ({
-  type: COMPLETE_FETCH,
-  data,
-});
-
-export const fetchData = () => (dispatch, getState) => {
-  dispatch(fetching());
-  fetchJsonp('https://en.wikipedia.org/w/api.php?action=opensearch&limit=24&format=json&search=apples&callback=?').then((res) => {
-    res.json().then((data) => {
-      console.log(data);
-      dispatch(completeFetch(data));
-    });
-  });
+const initialState = {
+  fetching: true,
+  data: [],
 };
 
-const reducer = (state = '', action) => {
+const reducer = (state = initialState, action) => {
   switch (action.type) {
-
     case FETCHING:
-      return {
-        isFetching: true,
-        state,
-      };
+      return Object.assign({}, state, { fetching: true });
 
     case COMPLETE_FETCH:
-      return action.data;
+      return Object.assign({}, state, {
+        fetching: false,
+        data: action.data,
+      });
 
     default:
       return state;
   }
 };
 
-export default createStore(reducer, applyMiddleware(thunk));
+export default createStore(reducer, compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
