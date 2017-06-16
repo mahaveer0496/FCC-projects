@@ -15,6 +15,7 @@
   }
   &__search-field {
     color: $dark_grey_text;
+    min-width: 260px;
     input[type="text"] {
       width: 400px;
       height: 39px;
@@ -74,5 +75,19 @@
   }
   &:hover {
     box-shadow: 0 4px 6px $light_grey
+  }
+}
+@media screen and (max-width: 600px){
+  .form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    &__search-field{
+      width:70%;
+      input[type="text"] {
+      width: 80%;
+
+      }
+    }
   }
 }

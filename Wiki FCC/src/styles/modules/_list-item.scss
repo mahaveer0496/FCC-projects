@@ -45,3 +45,16 @@
     transform: translate(-50%, -50%);
   }
 }
+
+@media screen and (max-width: 700px){
+  .list {
+    width: 80%;
+    height: 180px;
+  }
+}
+@media screen and (max-width: 450px){
+  .list {
+    width: 95%;
+    height: 200px;
+  }
+}
