@@ -5,3 +5,4 @@ public/*.svg
 public/*.jpg
 public/*.png
 npm-debug.log
+yarn-error.log
