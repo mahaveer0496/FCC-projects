@@ -3,8 +3,8 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { FETCHING, COMPLETE_FETCH } from './actionTypes';
 
 const initialState = {
-  fetching: true,
-  data: [],
+  fetching: false,
+  data: ['', [], [], []],
 };
 
 const reducer = (state = initialState, action) => {
