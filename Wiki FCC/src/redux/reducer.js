@@ -1,5 +1,6 @@
 import thunk from 'redux-thunk';
-import { createStore, applyMiddleware, compose } from 'redux';
+import logger from 'redux-logger';
+import { createStore, applyMiddleware } from 'redux';
 import { FETCHING, COMPLETE_FETCH } from './actionTypes';
 
 const initialState = {
@@ -23,4 +24,4 @@ const reducer = (state = initialState, action) => {
   }
 };
 
-export default createStore(reducer, compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()));
+export default createStore(reducer, applyMiddleware(thunk, logger));
